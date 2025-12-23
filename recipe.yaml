@@ -1,25 +1,41 @@
+
 $schema: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/schema.json
 
 name: Trenches RP Base
-author: NateTrill
-description: QBCore server with Trenches crafting
+author: NateGriffin
+description: QBCore server with Trenches-style crafting
 version: 1.0.0
 
 tasks:
+# ------------------------------------------------------------
+# Download QBCore Base
+# ------------------------------------------------------------
 - action: download_github
 src: qbcore-framework/qb-core
 ref: main
 dest: ./resources/[qb]/qb-core
 
 - action: download_github
-src: NateTrill/trenches-rp-recipe
+src: qbcore-framework/qb-inventory
+ref: main
+dest: ./resources/[qb]/qb-inventory
+
+# ------------------------------------------------------------
+# Trenches Crafting Script
+# ------------------------------------------------------------
+- action: download_github
+src: NateGriffin/trenches-rp-recipe
 ref: main
 dest: ./resources
 
+# ------------------------------------------------------------
+# Server CFG Setup
+# ------------------------------------------------------------
 - action: replace_string
 file: server.cfg
 search: "# QB Resources"
 replace: |
 # QB Resources
 ensure qb-core
+ensure qb-inventory
 ensure trenches_crafting
