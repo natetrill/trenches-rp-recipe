@@ -1,4 +1,7 @@
-author: Natetrill
+$schema: https://raw.githubusercontent.com/tabarra/txAdmin-recipes/main/schema.json
+
+name: Trenches RP Base
+author: NateTrill
 description: QBCore server with Trenches crafting
 version: 1.0.0
 
@@ -9,7 +12,7 @@ ref: main
 dest: ./resources/[qb]/qb-core
 
 - action: download_github
-src: natetrill/trenches-rp-recipe
+src: NateTrill/trenches-rp-recipe
 ref: main
 dest: ./resources
 
