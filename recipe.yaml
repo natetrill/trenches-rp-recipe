@@ -1,0 +1,22 @@
+author: You
+description: QBCore server with Trenches crafting
+version: 1.0.0
+
+tasks:
+- action: download_github
+src: qbcore-framework/qb-core
+ref: main
+dest: ./resources/[qb]/qb-core
+
+- action: download_github
+src: natetrill/trenches-rp-recipe
+ref: main
+dest: ./resources
+
+- action: replace_string
+file: server.cfg
+search: "# QB Resources"
+replace: |
+# QB Resources
+ensure qb-core
+ensure trenches_crafting
